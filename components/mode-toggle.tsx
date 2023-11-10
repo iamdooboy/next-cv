@@ -1,11 +1,13 @@
-"use client"
+'use client'
 
-import * as React from "react"
-import { Moon, Sun } from "lucide-react"
-import { useTheme } from "next-themes"
-import { cn } from "@/lib/utils"
-import { buttonVariants } from "./ui/button"
-import { useEffect, useState } from "react"
+import * as React from 'react'
+import { useEffect, useState } from 'react'
+import { Moon, Sun } from 'lucide-react'
+import { useTheme } from 'next-themes'
+
+import { cn } from '@/lib/utils'
+
+import { buttonVariants } from './ui/button'
 
 export function ModeToggle() {
   const [mounted, setMounted] = useState(false)
@@ -23,19 +25,17 @@ export function ModeToggle() {
     <button
       className={cn(
         buttonVariants({
-          variant: "ghost",
+          variant: 'ghost',
         })
       )}
       onClick={() => {
-        {theme === "light" ? (
-          setTheme('dark')
-        ) : (
-          setTheme('light')
-        )}
+        {
+          theme === 'light' ? setTheme('dark') : setTheme('light')
+        }
       }}
     >
-      <span className="sr-only">Toggle mode</span>
-      {theme === "light" ? (
+      <span className='sr-only'>Toggle mode</span>
+      {theme === 'light' ? (
         <Sun className={`h-5 w-5`} />
       ) : (
         <Moon className={`h-5 w-5`} />
