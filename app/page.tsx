@@ -1,30 +1,28 @@
 import Image from 'next/image'
+import { bioData } from '@/data/bio'
 import { profileData } from '@/data/profile'
 
+import { Bio } from '@/components/bio'
 import { ModeToggle } from '@/components/mode-toggle'
+import { Profile } from '@/components/profile'
 
 export default function Home() {
   return (
     <main className='max-w-xl mx-auto px-6 py-20 relative min-h-screen font-light'>
-      <section className='flex items-center'>
-        <Image
-          alt='Author'
-          src={profileData.avatar}
-          width={80}
-          height={80}
-          className='rounded-full object-cover'
-        />
-      </section>
+      <Bio bio={bioData} />
       <section className='my-9 text-sm'>
         <h3 className='mb-1 text-slate-900 dark:text-slate-100'>About</h3>
         <div className='text-slate-600 dark:text-slate-300'>
-          <p>{profileData.about}</p>
+          <p>{bioData.about}</p>
         </div>
       </section>
+      {profileData.map((content, index) => {
+        return <Profile {...content} key={index} />
+      })}
       <section className='my-14 text-sm'>
         <h3 className='mb-6 text-slate-900'>Contact</h3>
         <div className='flex flex-col gap-6'>
-          {profileData.contacts.map((contact, index) => {
+          {bioData.contacts.map((contact, index) => {
             return (
               <div className='flex' key={index}>
                 <div className='mr-8 max-w-[100px] w-full text-slate-400 dark:text-slate-400'>
