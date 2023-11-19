@@ -37,7 +37,7 @@ export function Bio({ bio }: BioProps) {
         <p className='text-muted-foreground text-sm'>{bio.jobTitle}</p>
 
         {bio.website ? (
-          <span className='text-xs text-muted-foreground bg-secondary rounded-full px-2 py-1'>
+          <span className='text-muted-foreground bg-secondary rounded-full px-2 py-1 text-xs'>
             <Link href={bio.website} target='_blank' rel='noopener noreferrer'>
               {bio.website.replace(/(^\w+:|^)\/\//, '').replace('www.', '')}
             </Link>

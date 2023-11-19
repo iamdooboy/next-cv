@@ -6,7 +6,7 @@ import { Profile } from '@/components/profile'
 
 export default function Home() {
   return (
-    <main className='max-w-xl mx-auto px-6 py-20 relative min-h-screen font-light'>
+    <main className='relative mx-auto min-h-screen max-w-xl px-6 py-20 font-light'>
       <Bio bio={bioData} />
       <section className='my-9 text-sm'>
         <h3 className='mb-1'>About</h3>
@@ -23,15 +23,15 @@ export default function Home() {
           {bioData.contacts.map((contact, index) => {
             return (
               <div className='flex' key={index}>
-                <div className='mr-8 max-w-[100px] w-full text-slate-400 dark:text-slate-400'>
+                <div className='mr-8 w-full max-w-[100px] text-slate-400 dark:text-slate-400'>
                   {contact.label}
                 </div>
-                <div className='flex flex-col flex-1 text-slate-900 dark:text-slate-100'>
+                <div className='flex flex-1 flex-col text-slate-900 dark:text-slate-100'>
                   <a
                     href={contact.href}
                     target='_blank'
                     rel='noopener noreferrer'
-                    className='hover:underline inline-flex'
+                    className='inline-flex hover:underline'
                   >
                     {contact.value}
                     <svg
