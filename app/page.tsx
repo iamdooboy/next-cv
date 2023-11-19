@@ -1,9 +1,7 @@
-import Image from 'next/image'
 import { bioData } from '@/data/bio'
 import { profileData } from '@/data/profile'
 
 import { Bio } from '@/components/bio'
-import { ModeToggle } from '@/components/mode-toggle'
 import { Profile } from '@/components/profile'
 
 export default function Home() {
@@ -11,8 +9,8 @@ export default function Home() {
     <main className='max-w-xl mx-auto px-6 py-20 relative min-h-screen font-light'>
       <Bio bio={bioData} />
       <section className='my-9 text-sm'>
-        <h3 className='mb-1 text-slate-900 dark:text-slate-100'>About</h3>
-        <div className='text-slate-600 dark:text-slate-300'>
+        <h3 className='mb-1'>About</h3>
+        <div className='text-muted-foreground'>
           <p>{bioData.about}</p>
         </div>
       </section>
@@ -20,7 +18,7 @@ export default function Home() {
         return <Profile {...content} key={index} />
       })}
       <section className='my-14 text-sm'>
-        <h3 className='mb-6 text-slate-900'>Contact</h3>
+        <h3 className='mb-6'>Contact</h3>
         <div className='flex flex-col gap-6'>
           {bioData.contacts.map((contact, index) => {
             return (

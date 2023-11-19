@@ -36,9 +36,9 @@ export function ModeToggle() {
     >
       <span className='sr-only'>Toggle mode</span>
       {theme === 'light' ? (
-        <Sun className={`h-5 w-5`} />
+        <Sun className={`h-4 w-4`} />
       ) : (
-        <Moon className={`h-5 w-5`} />
+        <Moon className={`h-4 w-4`} />
       )}
     </button>
   )
